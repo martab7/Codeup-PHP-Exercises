@@ -29,3 +29,9 @@ foreach ($books as $name => $book) {
     echo "       {$index}: {$attribute}\n";
   }
 }
+
+foreach ($books as $name => $book) {
+  if($book['published'] > 1950) {
+    echo "{$name}\n";
+  };
+}
