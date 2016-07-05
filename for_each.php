@@ -10,8 +10,7 @@ foreach ($things as $thing) {
   } elseif (is_bool($thing)){
     echo "{$thing} is a boolean\n.";
   } elseif (is_array($thing)){
-    print_r($thing);
-    // echo "{$thing} is an array\n.";
+    echo $thing . PHP_EOL;
   } elseif (is_null($thing)){
     echo "{$thing} is a null\n.";
   } elseif (is_string($thing)){
@@ -26,8 +25,11 @@ foreach($things as $thing) {
 }
 
 foreach($things as $thing) {
-  print_r($thing . PHP_EOL);
-  if (is_array($thing)){
-    print_r($thing);
+  if(is_array($thing)) {
+    foreach($thing as $other_things) {
+      echo $other_things . ' ';
+    }
+  } else {
+    echo $thing . PHP_EOL;
   }
 }
