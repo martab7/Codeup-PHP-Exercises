@@ -28,4 +28,11 @@ function modulus($a, $b)
     return $a % $b;
 }
 
+echo add($a, $b), PHP_EOL;
+echo subtract($a, $b), PHP_EOL;
+echo multiply($a, $b), PHP_EOL;
+echo divide($a, $b), PHP_EOL;
+echo modulus($a, $b), PHP_EOL;
+
+echo 2 % 5;
 // Add code to test your functions here
