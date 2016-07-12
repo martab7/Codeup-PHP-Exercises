@@ -6,7 +6,7 @@ function parseContacts($filename)
 
     $thisFilename = "{$filename}";
     $handle = fopen($thisFilename, 'r');
-    $contents = fread($handle, filesize($thisFilename));
+    $contents = trim(fread($handle, filesize($thisFilename)));
     $list = explode("\n", $contents);
 
     foreach ($list as $contact) {
@@ -19,7 +19,6 @@ function parseContacts($filename)
     };
 
     fclose($handle);
-    array_pop($contacts);
     return $contacts;
 }
 
