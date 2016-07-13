@@ -1,12 +1,12 @@
 <?php
-
+// -----Add Contact ----
 function addContact($newContact) {
   $filename = 'contacts.txt';
   $handle = fopen($filename, 'a');
   fwrite($handle, $newContact . PHP_EOL);
   fclose($handle);
 }
-
+// -----Search Contact ----
 function searchContact(&$allContacts, $nameSearch) {
     foreach ($allContacts as $contact) {
         if (strpos($contact['name'], $nameSearch) !== false) {
@@ -14,20 +14,16 @@ function searchContact(&$allContacts, $nameSearch) {
         }
     }
 }
-
+// -----Delete Contact ----
 function deleteContact(&$allContacts, $nameDelete) {
   $contactToBeDeleted = searchContact($allContacts, $nameDelete);
   $contactString = implode('|', $contactToBeDeleted);
 
   $contents = file_get_contents('contacts.txt');
-  $contents = str_replace($contactString, '', $contents);
+  $contents = str_replace($contactString . PHP_EOL, '', $contents);
   file_put_contents('contacts.txt', trim($contents));
-  // $key = array_search($contactToBeDeleted, $allContacts);
-  // echo $key;
-  // unset($allContacts[$key]);
 }
-
-
+// -----Parse Contacts ----
 function parseContacts($filename) {
     $contacts = [];
 
@@ -49,7 +45,7 @@ function parseContacts($filename) {
     fclose($handle);
     return $contacts;
 }
-
+// -----Check Max Pad for name ----
 function maxPadName($allContacts) {
   $max = -1;
   foreach ($allContacts as $contact) {
@@ -58,7 +54,7 @@ function maxPadName($allContacts) {
   }
   return $max;
 }
-
+// -----Check Max Pad for number ----
 function maxPadNumber($allContacts) {
   $max = -1;
   foreach ($allContacts as $contact) {
@@ -67,6 +63,7 @@ function maxPadNumber($allContacts) {
   }
   return $max;
 }
+// -----Display Contact ----
 function displayContacts($allContacts) {
   $padName = maxPadName($allContacts) + 1;
   $padNumber = maxPadNumber($allContacts);
