@@ -47,7 +47,7 @@ do {
 
     switch ($option) {
         case 1:
-            print_r($friends);
+            print_r();
             break;
         case 2:
             //It's not returning an array with the names that are similar to $name
