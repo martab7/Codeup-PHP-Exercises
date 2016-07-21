@@ -10,3 +10,23 @@
 2016-07-11 19:20:55INFOThis is an info message.
 
 2016-07-11 19:20:55ERRORThis is an info message.
+
+2016-07-21 20:25:56INFOThis is an info message.
+
+2016-07-21 20:25:56ERRORThis is an info message.
+
+2016-07-21 20:38:03INFOThis is an info message.
+
+2016-07-21 20:38:03ERRORThis is an info message.
+
+2016-07-21 20:38:46INFOThis is an info message.: 
+
+2016-07-21 20:39:15 INFO This is an info message.: 
+
+2016-07-21 20:39:51 INFO This is an info message.: 
+
+2016-07-21 20:39:51 ERROR This is an info message.
+
+2016-07-21 20:42:08 INFO This is an info message.
+
+2016-07-21 20:42:08 ERROR This is an info message.
