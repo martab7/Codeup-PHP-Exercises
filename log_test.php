@@ -2,9 +2,9 @@
 require_once('Log.php');
 
 $log = new Log();
-$log->filename = 'cli';
+$log->setFilename($log->getFilename());
 
-echo $log->logMessage("INFO", $log->info());
-echo $log->logMessage("ERROR", $log->error());
+echo $log->info('Info');
+echo $log->error('Error');
 
 ?>
