@@ -15,6 +15,12 @@ class Model{
     return null;
   }
 
+  protected static $table = 'table';
+
+  public static function getTableName(){
+    return static::$table;
+  }
+
 }
 
 $test = new Model();
@@ -23,7 +29,7 @@ $test->first_name = 'Anthony';
 $test->last_name = 'Martinez';
 var_dump($test);
 
-echo $test->first_name;
-echo $test->last_name;
+// echo $test->first_name;
+// echo $test->last_name;
 
 ?>
